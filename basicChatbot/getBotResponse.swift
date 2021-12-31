@@ -40,3 +40,7 @@ func getBotResponse(message: String) -> String {
     }
 }
 
+
+
+
+///-> need to add more in depth information about the user and more responses also need to clean up code
