@@ -97,10 +97,10 @@ func getBotResponse(message: String) -> String {
     ]
     
     if sentimentDouble == 0.0 {
-        return "\(neutralRepliesStart.randomElement()!)\(neutralRepliesEnd.randomElement()!)"
+        return "\(neutralRepliesStart.randomElement()!) \(neutralRepliesEnd.randomElement()!)"
     } else if sentimentDouble > 0.1 {
-        return "\(positiveRepliesStart.randomElement()!)\(positiveRepliesEnd.randomElement()!)"
+        return "\(positiveRepliesStart.randomElement()!) \(positiveRepliesEnd.randomElement()!)"
     } else {
-        return"\(negativeRepliesStart.randomElement()!)\(negativeRepliesEnd.randomElement()!)"
+        return"\(negativeRepliesStart.randomElement()!) \(negativeRepliesEnd.randomElement()!)"
     }
 }
