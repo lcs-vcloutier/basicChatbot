@@ -12,6 +12,7 @@
 		921EB63F277FB766007B1CCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 921EB63E277FB766007B1CCA /* Assets.xcassets */; };
 		921EB642277FB766007B1CCA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 921EB641277FB766007B1CCA /* Preview Assets.xcassets */; };
 		921EB649277FB7B5007B1CCA /* getBotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921EB648277FB7B5007B1CCA /* getBotResponse.swift */; };
+		92791C0F2781216500DE9FD3 /* ComponentViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92791C0E2781216500DE9FD3 /* ComponentViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		921EB63E277FB766007B1CCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		921EB641277FB766007B1CCA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		921EB648277FB7B5007B1CCA /* getBotResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getBotResponse.swift; sourceTree = "<group>"; };
+		92791C0E2781216500DE9FD3 /* ComponentViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			children = (
 				921EB63A277FB765007B1CCA /* basicChatbotApp.swift */,
 				921EB63C277FB765007B1CCA /* ContentView.swift */,
+				92791C0E2781216500DE9FD3 /* ComponentViews.swift */,
 				921EB648277FB7B5007B1CCA /* getBotResponse.swift */,
 				921EB63E277FB766007B1CCA /* Assets.xcassets */,
 				921EB640277FB766007B1CCA /* Preview Content */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92791C0F2781216500DE9FD3 /* ComponentViews.swift in Sources */,
 				921EB63D277FB765007B1CCA /* ContentView.swift in Sources */,
 				921EB649277FB7B5007B1CCA /* getBotResponse.swift in Sources */,
 				921EB63B277FB765007B1CCA /* basicChatbotApp.swift in Sources */,

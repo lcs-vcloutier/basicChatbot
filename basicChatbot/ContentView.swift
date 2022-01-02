@@ -12,94 +12,51 @@ struct ContentView: View {
     @State var messages: [String] = ["Welcome to ChatShrink 2.0! Please skip any pleasantries and tell me how you feel."]
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("ChatShrink")
-                    .font(.largeTitle)
-                    .bold()
-                
-                Image(systemName: "bubble.left.fill")
-                    .font(.system(size: 26))
-                    .foregroundColor(Color.blue)
-            }
-            
-            ScrollView {
-                ForEach(messages, id: \.self) { message in
-                    // If the message contains [USER], that means it's us
-                    if message.contains("[USER]") {
-                        let newMessage = message.replacingOccurrences(of: "[USER]", with: "")
-                        
-                        // User message styles
-                        HStack {
-                            Spacer()
-                            Text(newMessage)
-                                .padding()
-                                .foregroundColor(Color.white)
-                                .background(Color.blue.opacity(0.8))
-                                .cornerRadius(10)
-                                .padding(.horizontal, 16)
-                                .padding(.bottom, 10)
-                        }
-                    } else {
-                        
-                        // Bot message styles
-                        HStack {
-                            Text(message)
-                                .padding()
-                                .background(Color.gray.opacity(0.15))
-                                .cornerRadius(10)
-                                .padding(.horizontal, 16)
-                                .padding(.bottom, 10)
-                            Spacer()
+        NavigationView {
+            VStack {
+                ScrollView {
+                    ForEach(messages, id: \.self) { message in
+                        // check if message is from user or bot and display view accordingly
+                        if message.contains("[USER]") {
+                            let userMessage = message.replacingOccurrences(of: "[USER]", with: "")
+                            individualMessageView(msg: userMessage, isUserMessage: true)
+                        } else {
+                            individualMessageView(msg: message, isUserMessage: false)
                         }
                     }
+                }
+                
+                HStack {
+                    TextField("Message", text: $messageText)
+                        .padding()
+                        .background(.regularMaterial)
+                        .cornerRadius(10)
                     
-                }.rotationEffect(.degrees(180))
-            }
-            .rotationEffect(.degrees(180))
-            .background(Color.gray.opacity(0.1))
-            
-            
-            // Contains the Message bar
-            HStack {
-                TextField("Type something", text: $messageText)
+                    Button {
+                        postMessage(msg: messageText)
+                    } label: {
+                        Image(systemName: "paperplane.fill")
+                    }
+                    .disabled(messageText.isEmpty)
                     .padding()
-                    .background(Color.gray.opacity(0.1))
-                    .cornerRadius(10)
-                    .onSubmit {
-                        sendMessage(message: messageText)
-                    }
-                
-                Button {
-                    sendMessage(message: messageText)
-                } label: {
-                    Image(systemName: "paperplane.fill")
+                    .font(.title)
+                    
                 }
-                .font(.system(size: 26))
-                .padding(.horizontal, 10)
+                .padding()
             }
-            .padding()
+            .navigationTitle("Shrink")
         }
     }
-    
-    func sendMessage(message: String) {
-        if message != "" {
-            withAnimation {
-                messages.append("[USER]" + message)
-                self.messageText = ""
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    withAnimation {
-                        messages.append(getBotResponse(message: message))
-                    }
+    func postMessage(msg: String) {
+        withAnimation {
+            messages.append("[USER]" + msg)
+            self.messageText = ""
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                withAnimation {
+                    messages.append(getBotResponse(message: msg))
                 }
             }
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
