@@ -16,7 +16,8 @@ struct individualMessageView: View {
                 Spacer()
                 Text(msg)
                     .padding()
-                    .background(.regularMaterial)
+                    .background(.blue)
+                    .foregroundColor(.white)
                     .cornerRadius(10)
             } else {
                 Text(msg)
