@@ -65,9 +65,9 @@ func getBotResponse(message: String) -> String {
         "I'd like to hear about how you really feel.",
         "Please expand on this.",
         "Tell me more about this.",
-        "How has this affected you?",
+        "How do you think this has affected you emotionally on the whole?",
         "Let's explore this.",
-        "Please continue explore this situation."
+        "Please explore this."
     ]
     
     let negativeRepliesStart = [
