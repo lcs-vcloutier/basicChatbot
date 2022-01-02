@@ -43,7 +43,7 @@ struct ContentView: View {
                 }
                 .padding()
             }
-            .navigationTitle("Shrink")
+            .navigationTitle("Truncate")
         }
     }
     func postMessage(msg: String) {
