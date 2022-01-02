@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		921EB637277FB765007B1CCA /* basicChatbot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = basicChatbot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		921EB637277FB765007B1CCA /* Truncate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Truncate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		921EB63A277FB765007B1CCA /* basicChatbotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basicChatbotApp.swift; sourceTree = "<group>"; };
 		921EB63C277FB765007B1CCA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		921EB63E277FB766007B1CCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,7 +47,7 @@
 		921EB638277FB765007B1CCA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				921EB637277FB765007B1CCA /* basicChatbot.app */,
+				921EB637277FB765007B1CCA /* Truncate.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,7 +90,7 @@
 			);
 			name = basicChatbot;
 			productName = basicChatbot;
-			productReference = 921EB637277FB765007B1CCA /* basicChatbot.app */;
+			productReference = 921EB637277FB765007B1CCA /* Truncate.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -292,7 +292,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vincentcloutier.basicChatbot;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Truncate;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -322,7 +322,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vincentcloutier.basicChatbot;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Truncate;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
