@@ -40,7 +40,6 @@ struct ContentView: View {
                     .disabled(messageText.isEmpty)
                     .padding()
                     .font(.title)
-                    
                 }
                 .padding()
             }
