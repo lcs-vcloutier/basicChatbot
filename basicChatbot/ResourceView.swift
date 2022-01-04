@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ResourceView: View {
+    @Environment(\.openURL) var openURL
+
     var body: some View {
         VStack(alignment: .leading) {
-            Text("This app is not professional psychological help. \nBelow are resources that explain how the chatbots answers. \nThere are also links to professional resources.")
+            Text("This app is not professional psychological help. \nBelow are professional resources that explain how the chatbots answers.")
                 .font(.title)
                 .fontWeight(.semibold)
                 .foregroundColor(.primary)
@@ -23,19 +25,21 @@ struct ResourceView: View {
             Divider()
             ScrollView {
                 Button {
-                    // Open Link
+                    openURL(URL(string: "https://www.who.int/news-room/fact-sheets/detail/depression")!)
                 } label: {
-                    CardView(image: "Image", heading: "Depression", author: "World Health Organization")
+                    CardView(image: "WHO", heading: "Depression", author: "World Health Organization")
                 }
+                Divider()
                 Button {
-                    // Open Link
+                    openURL(URL(string: "https://www.psychiatry.org/patients-families/depression/what-is-depression")!)
                 } label: {
-                    CardView(image: "Image", heading: "What Is Depression?", author: "American Psychiatric Association")
+                    CardView(image: "APA", heading: "What Is Depression?", author: "American Psychiatric Association")
                 }
+                Divider()
                 Button {
-                    // Open Link
+                    openURL(URL(string: "https://www.healthline.com/health/depression/how-to-fight-depression")!)
                 } label: {
-                    CardView(image: "Image", heading: "How to Fight Depression", author: "Healthline")
+                    CardView(image: "Healthline", heading: "How to Fight Depression", author: "Healthline")
                 }
                 Spacer()
             }
