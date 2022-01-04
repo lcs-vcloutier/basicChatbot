@@ -44,6 +44,13 @@ struct ContentView: View {
                 .padding()
             }
             .navigationTitle("Truncate")
+            .toolbar {
+                ToolbarItem {
+                    NavigationLink(destination: ResourceView()) {
+                        Text("Resources")
+                    }
+                }
+            }
         }
     }
     func postMessage(msg: String) {
