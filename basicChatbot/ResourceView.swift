@@ -9,26 +9,36 @@ import SwiftUI
 
 struct ResourceView: View {
     var body: some View {
-        ScrollView {
-            Text("This app is not a replacement for professional psychological help. Below are links that help explain how we developed the chatbot's answers. There are also links to professional resources.")
+        VStack(alignment: .leading) {
+            Text("This app is not professional psychological help. \nBelow are resources that explain how the chatbots answers. \nThere are also links to professional resources.")
                 .font(.title)
-            Button {
-                // Open Link
-            } label: {
-                CardView(image: "Image", category: "test", heading: "test", author: "test")
+                .fontWeight(.semibold)
+                .foregroundColor(.primary)
+            
+            Divider()
+            Text("If you need help right away: Call the National Suicide Prevention Lifeline at 1-800-273-8255.")
+                .font(.headline)
+                .foregroundColor(.secondary)
+            
+            Divider()
+            ScrollView {
+                Button {
+                    // Open Link
+                } label: {
+                    CardView(image: "Image", heading: "Depression", author: "World Health Organization")
+                }
+                Button {
+                    // Open Link
+                } label: {
+                    CardView(image: "Image", heading: "What Is Depression?", author: "American Psychiatric Association")
+                }
+                Button {
+                    // Open Link
+                } label: {
+                    CardView(image: "Image", heading: "How to Fight Depression", author: "Healthline")
+                }
+                Spacer()
             }
-            Button {
-                // Open Link
-            } label: {
-                CardView(image: "Image", category: "test", heading: "test", author: "test")
-            }
-            Button {
-                // Open Link
-            } label: {
-                CardView(image: "Image", category: "test", heading: "test", author: "test")
-            }
-
-            Spacer()
         }
         .navigationTitle("Resources")
         .padding()
@@ -38,7 +48,6 @@ struct ResourceView: View {
 
 struct CardView: View {
     var image: String
-    var category: String
     var heading: String
     var author: String
     var body: some View {
@@ -46,23 +55,20 @@ struct CardView: View {
             Image(image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-
+            
             HStack {
                 VStack(alignment: .leading) {
-                    Text(category)
-                        .font(.headline)
-                        .foregroundColor(.secondary)
                     Text(heading)
                         .font(.title)
                         .fontWeight(.black)
                         .foregroundColor(.primary)
                         .lineLimit(3)
                     Text(author.uppercased())
-                        .font(.caption)
+                        .font(.headline)
                         .foregroundColor(.secondary)
                 }
                 .layoutPriority(100)
-
+                
                 Spacer()
             }
             .padding()
