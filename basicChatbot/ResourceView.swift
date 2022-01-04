@@ -12,7 +12,7 @@ struct ResourceView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text("This app is not professional psychological help. \nBelow are professional resources that explain how the chatbots answers.")
+            Text("This app is not professional psychological help. \nBelow are resources that explain how the chatbots answers, and how to get help.")
                 .font(.title)
                 .fontWeight(.semibold)
                 .foregroundColor(.primary)
