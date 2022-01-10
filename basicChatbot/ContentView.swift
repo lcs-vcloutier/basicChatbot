@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var messageText = ""
-    @State var messages: [String] = ["Hi I'm Truncate! Please skip any pleasantries and tell me what you're going through."]
+    @State var messages: [String] = ["Hi, I'm Truncate! Please skip any pleasantries and tell me what you're going through."]
     
     var body: some View {
         NavigationView {

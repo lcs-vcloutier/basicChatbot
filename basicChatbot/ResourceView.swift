@@ -12,7 +12,7 @@ struct ResourceView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text("This app is not professional psychological help. \nBelow are resources that explain how the chatbots answers, and how to get help.")
+            Text("Truncate is not professional psychological help. \nBelow are resources that explain how the chatbot answers and how to get help.")
                 .font(.title)
                 .fontWeight(.semibold)
                 .foregroundColor(.primary)
@@ -66,7 +66,7 @@ struct CardView: View {
                         .font(.title)
                         .fontWeight(.black)
                         .foregroundColor(.primary)
-                        .lineLimit(3)
+                        .lineLimit(1)
                     Text(author.uppercased())
                         .font(.headline)
                         .foregroundColor(.secondary)
