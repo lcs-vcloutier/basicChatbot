@@ -23,8 +23,8 @@ struct ContentView: View {
                         } else {
                             individualMessageView(msg: message, isUserMessage: false)
                         }
-                    }
-                }
+                    }.rotationEffect(.degrees(180))
+                }.rotationEffect(.degrees(180))
                 
                 HStack {
                     TextField("Message", text: $messageText)
