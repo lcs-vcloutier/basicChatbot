@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    let defaults = UserDefaults.standard
     @State private var messageText = ""
     @State var messages: [String] = ["Hi, I'm Truncate! Please skip any pleasantries and tell me what you're going through."]
     
@@ -43,6 +44,9 @@ struct ContentView: View {
                 }
                 .padding()
             }
+            .onAppear(perform: {
+                messages = defaults.stringArray(forKey: "messages")!
+            })
             .navigationTitle("Truncate")
             .toolbar {
                 ToolbarItem {
@@ -61,6 +65,7 @@ struct ContentView: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 withAnimation {
                     messages.append(getBotResponse(message: msg))
+                    defaults.set(messages, forKey: "messages")
                 }
             }
         }
