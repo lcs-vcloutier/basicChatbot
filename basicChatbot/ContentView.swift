@@ -10,8 +10,7 @@ import SwiftUI
 struct ContentView: View {
     let defaults = UserDefaults.standard
     @State private var messageText = ""
-    @State var messages: [String] = ["Hi, I'm Truncate! Please skip any pleasantries and tell me what you're going through."]
-    
+    @State var messages: [String] = [""]
     var body: some View {
         NavigationView {
             VStack {
@@ -45,7 +44,7 @@ struct ContentView: View {
                 .padding()
             }
             .onAppear(perform: {
-                messages = defaults.stringArray(forKey: "messages")!
+                messages = defaults.stringArray(forKey: "messages") ?? ["Hi, I'm Truncate! Please skip any pleasantries and tell me what you're going through."]
             })
             .navigationTitle("Truncate")
             .toolbar {
